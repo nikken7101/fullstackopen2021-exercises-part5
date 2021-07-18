@@ -44,12 +44,12 @@ const App = () => {
       setUser(user)
       setUsername('')
       setPassword('')
-      setMessage({ text: `Logged in as ${user.name}`, type: "info" })
+      setMessage({ text: `Logged in as ${user.name}`, type: 'info' })
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     } catch (exception) {
-      setMessage({ text: 'wrong credentials', type: "error" })
+      setMessage({ text: 'wrong credentials', type: 'error' })
       setTimeout(() => {
         setMessage(null)
       }, 5000)
@@ -60,7 +60,7 @@ const App = () => {
     event.preventDefault()
     window.localStorage.removeItem('loggedBlogAppUser')
     setUser(null)
-    setMessage({ text: `Logout succeeded`, type: "info" })
+    setMessage({ text: 'Logout succeeded', type: 'info' })
     setTimeout(() => {
       setMessage(null)
     }, 5000)
@@ -95,12 +95,12 @@ const App = () => {
       const blog = await blogService.create(blogObj)
       createFormRef.current.toggleVisibility()
       setBlogs(blogs.concat(blog))
-      setMessage({ text: `Created a new blog`, type: "info" })
+      setMessage({ text: 'Created a new blog', type: 'info' })
       setTimeout(() => {
         setMessage(null)
       }, 5000)
     } catch {
-      setMessage({ text: `Failed to create a new blog`, type: "error" })
+      setMessage({ text: 'Failed to create a new blog', type: 'error' })
       setTimeout(() => {
         setMessage(null)
       }, 5000)
@@ -109,7 +109,7 @@ const App = () => {
 
 
   const newBlogForm = () => (
-    <Togglable buttonLabel="create new blog" ref={createFormRef}>
+    <Togglable buttonLabel='create new blog' ref={createFormRef}>
       <BlogForm createNewBlog={createNewBlog} />
     </Togglable>
   )
